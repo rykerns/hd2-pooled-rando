@@ -16,8 +16,8 @@ function renderPoolSelector() {
         const card = document.createElement('button');
         card.className = 'pool-card';
         card.dataset.poolId = poolId;
+        card.style.setProperty('--pool-color', pool.color);
         card.innerHTML = `
-            <span class="pool-icon">${pool.icon}</span>
             <div class="pool-info">
                 <h3 class="pool-name">${pool.display_name}</h3>
                 <p class="pool-desc">${pool.description}</p>
@@ -60,7 +60,7 @@ function onRandomize() {
 
 function renderLoadout(loadout, pool) {
     document.getElementById('loadout-pool-name').textContent =
-        `${pool.icon} ${pool.display_name} LOADOUT`;
+        `${pool.display_name} LOADOUT`;
 
     // Stratagems
     const stratContainer = document.getElementById('stratagem-slots');
