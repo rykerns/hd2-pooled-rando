@@ -79,6 +79,13 @@ export const ITEM_META = {
         warbond: "Python Commandos",
         tags: ["rifle", "grenade_launcher"],
     },
+    PRI_SUPPRESSOR: {
+        display_name: "AR-59 Suppressor",
+        slot: "primary",
+        pen: "light",
+        warbond: "Unknown",
+        tags: ["rifle"],
+    },
 
     // Marksman Rifles
     PRI_AMENDMENT: {
@@ -114,6 +121,13 @@ export const ITEM_META = {
         slot: "primary",
         pen: "light",
         warbond: "Helldivers Mobilize",
+        tags: ["marksman", "rifle"],
+    },
+    PRI_CENSOR: {
+        display_name: "R-72 Censor",
+        slot: "primary",
+        pen: "light",
+        warbond: "Unknown",
         tags: ["marksman", "rifle"],
     },
 
@@ -191,11 +205,11 @@ export const ITEM_META = {
         tags: ["shotgun", "incendiary", "roundsreload"],
     },
     PRI_DOUBLE_FREEDOM: {
-        display_name: "SG-225SP Breaker Spray & Pray",
+        display_name: "DBS-2 Double Freedom",
         slot: "primary",
         pen: "medium",
-        warbond: "Helldivers Mobilize",
-        tags: ["shotgun", "roundsreload"],
+        warbond: "Unknown",
+        tags: ["shotgun"],
     },
     PRI_M90A_SGUN: {
         display_name: "M90A Shotgun",
@@ -226,44 +240,7 @@ export const ITEM_META = {
         tags: ["shotgun", "incendiary"],
     },
 
-    // Explosive / Special
-    PRI_EXPLODING_XBOW: {
-        display_name: "CB-9 Exploding Crossbow",
-        slot: "primary",
-        pen: "medium",
-        warbond: "Democratic Detonation",
-        tags: ["explosive", "crossbow"],
-    },
-    PRI_ERUPTOR: {
-        display_name: "R-36 Eruptor",
-        slot: "primary",
-        pen: "heavy",
-        warbond: "Democratic Detonation",
-        tags: ["explosive", "marksman", "roundsreload"],
-    },
-    PRI_PUNISHER_PLAS: {
-        display_name: "SG-8P Punisher Plasma",
-        slot: "primary",
-        pen: "medium",
-        warbond: "Cutting Edge",
-        tags: ["shotgun", "plasma", "explosive"],
-    },
-    PRI_ACCELERATOR_RIFLE: {
-        display_name: "LAS-39 Accelerator Rifle",
-        slot: "primary",
-        pen: "medium",
-        warbond: "Event",
-        tags: ["energy", "rifle"],
-    },
-    PRI_BLITZER: {
-        display_name: "ARC-12 Blitzer",
-        slot: "primary",
-        pen: "medium",
-        warbond: "Cutting Edge",
-        tags: ["shotgun", "energy", "electric", "infinite ammo"],
-    },
-
-    // Laser / Plasma
+    // Energy / Laser / Plasma
     PRI_SCYTHE_LAS: {
         display_name: "LAS-5 Scythe",
         slot: "primary",
@@ -299,6 +276,29 @@ export const ITEM_META = {
         warbond: "Polar Patriots",
         tags: ["plasma", "explosive"],
     },
+    PRI_PUNISHER_PLAS: {
+        display_name: "SG-8P Punisher Plasma",
+        slot: "primary",
+        pen: "medium",
+        warbond: "Cutting Edge",
+        tags: ["shotgun", "plasma", "explosive"],
+    },
+    PRI_ACCELERATOR_RIFLE: {
+        display_name: "LAS-39 Accelerator Rifle",
+        slot: "primary",
+        pen: "medium",
+        warbond: "Event",
+        tags: ["energy", "rifle"],
+    },
+    PRI_BLITZER: {
+        display_name: "ARC-12 Blitzer",
+        slot: "primary",
+        pen: "medium",
+        warbond: "Cutting Edge",
+        tags: ["shotgun", "energy", "electric", "infinite ammo"],
+    },
+
+    // Special Weapons
     PRI_VARIABLE: {
         display_name: "VG-70 Variable",
         slot: "primary",
@@ -319,6 +319,20 @@ export const ITEM_META = {
         pen: "medium",
         warbond: "Steeled Veterans",
         tags: ["marksman", "explosive"],
+    },
+    PRI_EXPLODING_XBOW: {
+        display_name: "CB-9 Exploding Crossbow",
+        slot: "primary",
+        pen: "medium",
+        warbond: "Democratic Detonation",
+        tags: ["explosive", "crossbow"],
+    },
+    PRI_ERUPTOR: {
+        display_name: "R-36 Eruptor",
+        slot: "primary",
+        pen: "heavy",
+        warbond: "Democratic Detonation",
+        tags: ["explosive", "marksman", "roundsreload"],
     },
 
     // ═══════════ Secondaries ═══════════
@@ -456,6 +470,13 @@ export const ITEM_META = {
         warbond: "Truth Enforcers",
         tags: ["plasma"],
     },
+    SEC_RE_EDUCATOR: {
+        display_name: "P-35 Re-Educator",
+        slot: "secondary",
+        pen: "heavy",
+        warbond: "Unknown",
+        tags: ["pistol"],
+    },
 
     // ═══════════ Grenades / Throwables ═══════════
 
@@ -563,5 +584,33 @@ export const ITEM_META = {
         pen: "none",
         warbond: "Force of Law",
         tags: ["stun", "sticky"],
+    },
+    THR_ARC: {
+        display_name: "G-31 Arc",
+        slot: "grenade",
+        pen: "none",
+        warbond: "Unknown",
+        tags: ["electric"],
+    },
+    THR_LURE_MINE: {
+        display_name: "TM-1 Lure Mine",
+        slot: "grenade",
+        pen: "none",
+        warbond: "Unknown",
+        tags: ["mine", "utility"],
+    },
+    THR_SMOKESCREEN: {
+        display_name: "G-89 Smokescreen",
+        slot: "grenade",
+        pen: "none",
+        warbond: "Unknown",
+        tags: ["smoke"],
+    },
+    THR_SHIELD: {
+        display_name: "G/SH-39 Shield",
+        slot: "grenade",
+        pen: "none",
+        warbond: "Unknown",
+        tags: ["shield", "utility"],
     },
 };
