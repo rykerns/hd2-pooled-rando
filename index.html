@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HD2 Loadout Randomizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <header class="site-header">
+        <div class="header-stripe"></div>
+        <h1>LOADOUT RANDOMIZER</h1>
+        <p class="subtitle">FOR SUPER EARTH</p>
+        <div class="header-stripe"></div>
+    </header>
+
+    <main>
+        <section id="pool-selection">
+            <h2 class="section-title">SELECT MISSION PROFILE</h2>
+            <div id="pool-grid" class="pool-grid"></div>
+        </section>
+
+        <div class="action-bar">
+            <button id="randomize-btn" class="randomize-btn" disabled>
+                <span class="btn-text">DEPLOY LOADOUT</span>
+            </button>
+        </div>
+
+        <section id="loadout-display" class="loadout-display hidden">
+            <h2 id="loadout-pool-name" class="section-title loadout-title"></h2>
+
+            <div class="loadout-section">
+                <h3 class="loadout-section-label">STRATAGEMS</h3>
+                <div id="stratagem-slots" class="stratagem-slots"></div>
+            </div>
+
+            <div class="loadout-section">
+                <h3 class="loadout-section-label">WEAPONS &amp; GEAR</h3>
+                <div class="weapon-slots">
+                    <div id="primary-slot" class="loadout-slot weapon-slot"></div>
+                    <div id="secondary-slot" class="loadout-slot weapon-slot"></div>
+                    <div id="throwable-slot" class="loadout-slot weapon-slot"></div>
+                </div>
+            </div>
+
+            <p id="loadout-warnings" class="warnings hidden"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Fan project. Helldivers 2 is property of Arrowhead Game Studios.</p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

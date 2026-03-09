@@ -1,0 +1,6 @@
+# Python source files (kept locally, not needed for the web app)
+*.py
+__pycache__/
+
+# Claude config
+.claude/
