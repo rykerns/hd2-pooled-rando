@@ -435,21 +435,4 @@ export const STRATAGEM_META = {
         tags: ["vehicle", "heavy", "anti_tank"],
     },
 
-    // ═══════════ Mission Support ═══════════
-
-    STRAT_REINFORCE: {
-        display_name: "Reinforce",
-        category: "mission",
-        tags: ["utility"],
-    },
-    STRAT_SOS_BEACON: {
-        display_name: "SOS Beacon",
-        category: "mission",
-        tags: ["utility"],
-    },
-    STRAT_RESUPPLY: {
-        display_name: "Resupply",
-        category: "mission",
-        tags: ["resupply", "utility"],
-    },
 };

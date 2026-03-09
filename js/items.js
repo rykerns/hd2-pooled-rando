@@ -297,6 +297,13 @@ export const ITEM_META = {
         warbond: "Cutting Edge",
         tags: ["shotgun", "energy", "electric", "infinite ammo"],
     },
+    PRI_TRIDENT: {
+        display_name: "LAS-13 Trident",
+        slot: "primary",
+        pen: "light",
+        warbond: "Siege Breakers",
+        tags: ["shotgun", "energy", "electric"],
+    },
 
     // Special Weapons
     PRI_VARIABLE: {

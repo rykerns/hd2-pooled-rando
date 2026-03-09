@@ -10,6 +10,7 @@ export const POOLS = {
             "PRI_ERUPTOR", "PRI_DOUBLE_EDGE_SICKLE", "PRI_TORCHER_FLAM",
             "PRI_JAR_DOMINATOR", "PRI_SCORCHER_PLAS", "PRI_PURIFIER_PLAS",
             "PRI_SLUGGER", "PRI_EXPLODING_XBOW", "PRI_ADJUDICATOR",
+            "PRI_COYOTE",
         ],
         secondaries: [
             "SEC_SENATOR", "SEC_ULTIMATUM", "SEC_RE_EDUCATOR",
@@ -22,39 +23,42 @@ export const POOLS = {
             "STRAT_RECOILLESS", "STRAT_ORBITAL_RAILCANNON", "STRAT_AUTOCANNON",
             "STRAT_EAGLE_500KG", "STRAT_ORBITAL_LASER", "STRAT_SPEAR",
             "STRAT_RAILGUN", "STRAT_QUASAR_CANNON", "STRAT_EXPENDABLE_AT",
-            "STRAT_EXO_EMANCIPATOR", "STRAT_COMMANDO", "STRAT_LEVELLER",
-            "STRAT_EAGLE_110MM", "STRAT_ORBITAL_PRECISION", "STRAT_WASP_LAUNCHER",
-            "STRAT_SPEARGUN", "STRAT_EPOCH", "STRAT_SOLO_SILO",
+            "STRAT_EXO_EMANCIPATOR", "STRAT_LEVELLER",
+            "STRAT_EAGLE_110MM", "STRAT_ORBITAL_PRECISION", "STRAT_SOLO_SILO",
+            "STRAT_ANTI_MATERIEL", "STRAT_C4_PACK",
+            "STRAT_ANTI_TANK_MINES", "STRAT_AT_EMPLACEMENT",
         ],
     },
 
     anti_chaff: {
         display_name: "Anti-Chaff",
-        description: "Wide spread. Clear the swarm.",
+        description: "Wide spread damage. Clear the swarm.",
         color: "#ff9800",
         primaries: [
             "PRI_BREAKER", "PRI_BREAKER_SPNPR", "PRI_BREAKER_INCIN",
-            "PRI_PUNISHER", "PRI_COOKOUT", "PRI_HALT", "PRI_DOUBLE_FREEDOM",
+            "PRI_HALT", "PRI_DOUBLE_FREEDOM",
             "PRI_M90A_SGUN", "PRI_VARIABLE", "PRI_TORCHER_FLAM",
             "PRI_BLITZER", "PRI_PUNISHER_PLAS",
         ],
         secondaries: [
             "SEC_BUSHWACKER", "SEC_CRISPER", "SEC_REDEEMER",
-            "SEC_SABER", "SEC_MACHETE",
+            "SEC_SABER", "SEC_MACHETE", "SEC_GRENADE_PISTOL",
         ],
         throwables: [
             "THR_FRAG", "THR_PINEAPPLE", "THR_INCENDIARY",
-            "THR_INCENDIARY_IMPACT", "THR_IMPACT", "THR_HIGH_EXPLOSIVE",
+            "THR_INCENDIARY_IMPACT", "THR_IMPACT", "THR_DYNAMITE",
+            "THR_GAS", "THR_PYROTECH", "THR_ARC",
         ],
         stratagems: [
-            "STRAT_EAGLE_CLUSTER", "STRAT_EAGLE_NAPALM", "STRAT_EAGLE_STRAFING",
-            "STRAT_EAGLE_AIRSTRIKE", "STRAT_ORBITAL_GATLING", "STRAT_ORBITAL_120MM",
+            "STRAT_EAGLE_CLUSTER", "STRAT_EAGLE_NAPALM",
+            "STRAT_EAGLE_AIRSTRIKE", "STRAT_ORBITAL_GATLING",
             "STRAT_ORBITAL_AIRBURST", "STRAT_ORBITAL_NAPALM", "STRAT_ORBITAL_WALKING",
             "STRAT_FLAMETHROWER", "STRAT_HMG", "STRAT_GATLING_SENTRY",
             "STRAT_MG_SENTRY", "STRAT_MORTAR_SENTRY", "STRAT_FLAME_SENTRY",
             "STRAT_ANTI_PERSONNEL_MINES", "STRAT_INCENDIARY_MINES",
             "STRAT_GRENADE_LAUNCHER", "STRAT_STALWART", "STRAT_MACHINEGUN",
-            "STRAT_MAXIGUN",
+            "STRAT_MAXIGUN", "STRAT_GAS_MINES", "STRAT_HMG_EMPLACEMENT",
+            "STRAT_AIRBURST_LAUNCHER",
         ],
     },
 
@@ -70,6 +74,7 @@ export const POOLS = {
         secondaries: [
             "SEC_STIM_PISTOL", "SEC_PEACEMAKER", "SEC_REDEEMER",
             "SEC_VERDICT", "SEC_SOCOM_PISTOL",
+            "SEC_STUN_LANCE", "SEC_STUN_BATON",
         ],
         throwables: [
             "THR_SMOKE", "THR_SMOKESCREEN", "THR_STUN",
@@ -79,9 +84,9 @@ export const POOLS = {
             "STRAT_MACHINEGUN", "STRAT_STALWART", "STRAT_HMG",
             "STRAT_AUTOCANNON", "STRAT_ANTI_MATERIEL", "STRAT_RECOILLESS",
             "STRAT_SUPPLY_PACK", "STRAT_SHIELD_PACK", "STRAT_SHIELD_GENERATOR",
-            "STRAT_BALLISTIC_SHIELD", "STRAT_REINFORCE", "STRAT_RESUPPLY",
-            "STRAT_SOS_BEACON", "STRAT_EMS_MORTAR", "STRAT_ORBITAL_SMOKE",
-            "STRAT_EAGLE_SMOKE",
+            "STRAT_BALLISTIC_SHIELD", "STRAT_EMS_MORTAR", "STRAT_ORBITAL_SMOKE",
+            "STRAT_EAGLE_SMOKE", "STRAT_EXPENDABLE_AT", "STRAT_BREACHING_HAMMER",
+            "STRAT_SPEARGUN", "STRAT_DEFOLIATION_TOOL", "STRAT_ONE_TRUE_FLAG",
         ],
     },
 
@@ -94,6 +99,7 @@ export const POOLS = {
             "PRI_BREAKER", "PRI_SLUGGER", "PRI_SCORCHER_PLAS",
             "PRI_TENDERIZER", "PRI_JAR_DOMINATOR", "PRI_DILLIGENCE",
             "PRI_SICKLE_LAS", "PRI_DEFENDER", "PRI_VARIABLE",
+            "PRI_DILLIGENCE_CS",
         ],
         secondaries: [
             "SEC_SENATOR", "SEC_VERDICT", "SEC_REDEEMER",
@@ -102,6 +108,7 @@ export const POOLS = {
         throwables: [
             "THR_FRAG", "THR_IMPACT", "THR_HIGH_EXPLOSIVE",
             "THR_INCENDIARY", "THR_STUN", "THR_THERMITE",
+            "THR_SMOKE",
         ],
         stratagems: [
             "STRAT_MACHINEGUN", "STRAT_STALWART", "STRAT_HMG",
@@ -109,8 +116,10 @@ export const POOLS = {
             "STRAT_GRENADE_LAUNCHER", "STRAT_RAILGUN", "STRAT_QUASAR_CANNON",
             "STRAT_MG_SENTRY", "STRAT_GATLING_SENTRY", "STRAT_AUTOCANNON_SENTRY",
             "STRAT_MORTAR_SENTRY", "STRAT_ROCKET_SENTRY",
-            "STRAT_HMG_EMPLACEMENT", "STRAT_AT_EMPLACEMENT",
+            "STRAT_HMG_EMPLACEMENT",
             "STRAT_GRENADIER_BATTLEMENT", "STRAT_BASTION", "STRAT_FAST_RECON",
+            "STRAT_ORBITAL_PRECISION", "STRAT_ORBITAL_GATLING",
+            "STRAT_ORBITAL_SMOKE", "STRAT_ORBITAL_120MM",
         ],
     },
 
@@ -122,7 +131,7 @@ export const POOLS = {
         color: "#ff5722",
         primaries: [
             "PRI_TORCHER_FLAM", "PRI_BREAKER_INCIN", "PRI_COOKOUT",
-            "PRI_COYOTE",
+            "PRI_COYOTE", "PRI_DOUBLE_EDGE_SICKLE", "PRI_PURIFIER_PLAS",
         ],
         secondaries: [
             "SEC_CRISPER", "SEC_GRENADE_PISTOL", "SEC_ULTIMATUM",
@@ -134,7 +143,8 @@ export const POOLS = {
         stratagems: [
             "STRAT_FLAMETHROWER", "STRAT_EAGLE_NAPALM", "STRAT_ORBITAL_NAPALM",
             "STRAT_INCENDIARY_MINES", "STRAT_HOT_DOG", "STRAT_FLAME_SENTRY",
-            "STRAT_EXPENDABLE_NAPALM",
+            "STRAT_EXPENDABLE_NAPALM", "STRAT_EPOCH", "STRAT_BREACHING_HAMMER",
+            "STRAT_EMS_MORTAR", "STRAT_EAGLE_110MM", "STRAT_ORBITAL_LASER",
         ],
     },
 
@@ -168,17 +178,19 @@ export const POOLS = {
         description: "Ride the lightning. Stun and fry.",
         color: "#2196f3",
         primaries: [
-            "PRI_BLITZER",
+            "PRI_BLITZER", "PRI_ACCELERATOR_RIFLE", "PRI_PACIFIER",
         ],
         secondaries: [
-            "SEC_STUN_LANCE", "SEC_STUN_BATON",
+            "SEC_STUN_LANCE", "SEC_STUN_BATON", "SEC_LOYALIST",
         ],
         throwables: [
-            "THR_ARC", "THR_STUN", "THR_URCHIN",
+            "THR_ARC", "THR_STUN", "THR_URCHIN", "THR_SHIELD",
         ],
         stratagems: [
             "STRAT_ARC_THROWER", "STRAT_TESLA_TOWER", "STRAT_K9",
             "STRAT_ORBITAL_EMS", "STRAT_EMS_MORTAR", "STRAT_DE_ESCALATOR",
+            "STRAT_JUMP_PACK", "STRAT_HOVER_PACK", "STRAT_SHIELD_GENERATOR",
+            "STRAT_ORBITAL_LASER", "STRAT_WARP_PACK",
         ],
     },
 
@@ -215,10 +227,13 @@ export const POOLS = {
         ],
         throwables: [
             "THR_GAS", "THR_SMOKE", "THR_SMOKESCREEN",
+            "THR_LURE_MINE", "THR_THROWING_KNIFE", "THR_STUN",
         ],
         stratagems: [
             "STRAT_ORBITAL_GAS", "STRAT_GAS_MINES", "STRAT_STERILIZER",
-            "STRAT_DOG_BREATH", "STRAT_EMS_MORTAR",
+            "STRAT_DOG_BREATH", "STRAT_EMS_MORTAR", "STRAT_SPEARGUN",
+            "STRAT_TESLA_TOWER", "STRAT_FLAME_SENTRY", "STRAT_SUPPLY_PACK",
+            "STRAT_HOVER_PACK",
         ],
     },
 
@@ -228,17 +243,20 @@ export const POOLS = {
         color: "#29b6f6",
         primaries: [
             "PRI_SCYTHE_LAS", "PRI_SICKLE_LAS", "PRI_DOUBLE_EDGE_SICKLE",
-            "PRI_ACCELERATOR_RIFLE",
+            "PRI_ACCELERATOR_RIFLE", "PRI_TRIDENT",
         ],
         secondaries: [
             "SEC_DAGGER_LAS", "SEC_TALON",
         ],
         throwables: [
-            "THR_STUN", "THR_IMPACT", "THR_FRAG", "THR_INCENDIARY",
+            "THR_STUN", "THR_IMPACT", "THR_SEEKER",
+            "THR_SMOKE", "THR_SHIELD",
         ],
         stratagems: [
             "STRAT_LASER_CANNON", "STRAT_QUASAR_CANNON", "STRAT_ORBITAL_LASER",
             "STRAT_GUARD_DOG_ROVER", "STRAT_LASER_SENTRY",
+            "STRAT_COMMANDO", "STRAT_SOLO_SILO", "STRAT_ORBITAL_RAILCANNON",
+            "STRAT_HOVER_PACK", "STRAT_WARP_PACK",
         ],
     },
 
@@ -250,9 +268,9 @@ export const POOLS = {
         color: "#d32f2f",
         primaries: [
             "PRI_BREAKER", "PRI_BREAKER_SPNPR", "PRI_BREAKER_INCIN",
-            "PRI_PUNISHER", "PRI_COOKOUT", "PRI_HALT", "PRI_DOUBLE_FREEDOM",
-            "PRI_M90A_SGUN", "PRI_SLUGGER", "PRI_TORCHER_FLAM",
-            "PRI_VARIABLE",
+            "PRI_HALT", "PRI_DOUBLE_FREEDOM",
+            "PRI_M90A_SGUN", "PRI_TORCHER_FLAM",
+            "PRI_VARIABLE", "PRI_TRIDENT", "PRI_BLITZER",
         ],
         secondaries: [
             "SEC_SABER", "SEC_STUN_LANCE", "SEC_STUN_BATON",
@@ -260,13 +278,17 @@ export const POOLS = {
         ],
         throwables: [
             "THR_STUN", "THR_SMOKE", "THR_INCENDIARY",
-            "THR_THROWING_KNIFE", "THR_URCHIN",
+            "THR_THROWING_KNIFE", "THR_URCHIN", "THR_LURE_MINE",
+            "THR_SHIELD", "THR_THERMITE",
         ],
         stratagems: [
             "STRAT_BREACHING_HAMMER", "STRAT_DEFOLIATION_TOOL", "STRAT_ONE_TRUE_FLAG",
             "STRAT_SHIELD_PACK", "STRAT_BALLISTIC_SHIELD", "STRAT_DIRECTIONAL_SHIELD",
             "STRAT_JUMP_PACK", "STRAT_HOVER_PACK", "STRAT_WARP_PACK",
             "STRAT_SHIELD_GENERATOR", "STRAT_FLAMETHROWER",
+            "STRAT_ARC_THROWER", "STRAT_STERILIZER", "STRAT_C4_PACK",
+            "STRAT_ORBITAL_SMOKE", "STRAT_EAGLE_SMOKE", "STRAT_FLAME_SENTRY",
+            "STRAT_SUPPLY_PACK", "STRAT_PORTABLE_HELLBOMB",
         ],
     },
 
@@ -277,18 +299,22 @@ export const POOLS = {
         primaries: [
             "PRI_AMENDMENT", "PRI_CONSTITUTION", "PRI_DEADEYE",
             "PRI_DILLIGENCE", "PRI_DILLIGENCE_CS", "PRI_CENSOR",
-            "PRI_ERUPTOR", "PRI_JAR_DOMINATOR", "PRI_ADJUDICATOR",
+            "PRI_ADJUDICATOR", "PRI_SCYTHE_LAS", "PRI_ACCELERATOR_RIFLE",
         ],
         secondaries: [
             "SEC_SENATOR", "SEC_VERDICT", "SEC_WARRANT", "SEC_RE_EDUCATOR",
         ],
         throwables: [
-            "THR_IMPACT", "THR_HIGH_EXPLOSIVE", "THR_THERMITE",
+            "THR_STUN", "THR_SEEKER", "THR_SMOKE",
+            "THR_THROWING_KNIFE", "THR_SMOKESCREEN",
         ],
         stratagems: [
             "STRAT_ANTI_MATERIEL", "STRAT_RAILGUN", "STRAT_SPEARGUN",
             "STRAT_ORBITAL_PRECISION", "STRAT_ORBITAL_RAILCANNON",
             "STRAT_EAGLE_500KG", "STRAT_EAGLE_110MM",
+            "STRAT_SPEAR", "STRAT_QUASAR_CANNON", "STRAT_WASP_LAUNCHER",
+            "STRAT_SOLO_SILO", "STRAT_ORBITAL_LASER", "STRAT_LASER_SENTRY",
+            "STRAT_HOVER_PACK",
         ],
     },
 
@@ -297,20 +323,24 @@ export const POOLS = {
         description: "Silent. Unseen. In and out.",
         color: "#00695c",
         primaries: [
-            "PRI_DEFENDER", "PRI_M7S_SMG", "PRI_KNIGHT", "PRI_SUPPRESSOR",
-            "PRI_DILLIGENCE_CS", "PRI_LIBERATOR_CARB",
+            "PRI_DEFENDER", "PRI_M7S_SMG", "PRI_SUPPRESSOR",
+            "PRI_DILLIGENCE_CS", "PRI_LIBERATOR_CARB", "PRI_CENSOR",
         ],
         secondaries: [
             "SEC_SOCOM_PISTOL", "SEC_DAGGER_LAS", "SEC_VERDICT",
+            "SEC_RE_EDUCATOR",
         ],
         throwables: [
             "THR_SMOKE", "THR_SMOKESCREEN", "THR_STUN",
-            "THR_SHIELD", "THR_THROWING_KNIFE",
+            "THR_SHIELD", "THR_THROWING_KNIFE", "THR_LURE_MINE",
         ],
         stratagems: [
             "STRAT_ORBITAL_SMOKE", "STRAT_EAGLE_SMOKE", "STRAT_ORBITAL_EMS",
             "STRAT_JUMP_PACK", "STRAT_HOVER_PACK", "STRAT_WARP_PACK",
             "STRAT_SUPPLY_PACK", "STRAT_SHIELD_PACK",
+            "STRAT_RAILGUN", "STRAT_SOLO_SILO", "STRAT_C4_PACK",
+            "STRAT_ORBITAL_RAILCANNON", "STRAT_ANTI_PERSONNEL_MINES",
+            "STRAT_DIRECTIONAL_SHIELD",
         ],
     },
 
@@ -321,19 +351,25 @@ export const POOLS = {
         primaries: [
             "PRI_KNIGHT", "PRI_DEFENDER", "PRI_STA_SMG", "PRI_M7S_SMG",
             "PRI_LIBERATOR_CARB", "PRI_PUMMELER",
+            "PRI_EXPLODING_XBOW", "PRI_SCYTHE_LAS", "PRI_TRIDENT",
+            "PRI_LIBERATOR",
         ],
         secondaries: [
             "SEC_BUSHWACKER", "SEC_REDEEMER", "SEC_PEACEMAKER",
+            "SEC_VERDICT", "SEC_SOCOM_PISTOL", "SEC_HATCHET",
+            "SEC_MACHETE", "SEC_GRENADE_PISTOL", "SEC_LOYALIST",
         ],
         throwables: [
-            "THR_SMOKE", "THR_SMOKESCREEN", "THR_STUN",
-            "THR_INCENDIARY",
+            "THR_STUN", "THR_INCENDIARY", "THR_THERMITE",
+            "THR_URCHIN", "THR_FRAG", "THR_HIGH_EXPLOSIVE",
         ],
         stratagems: [
-            "STRAT_JUMP_PACK", "STRAT_HOVER_PACK", "STRAT_WARP_PACK",
+            "STRAT_JUMP_PACK", "STRAT_WARP_PACK",
             "STRAT_EAGLE_STRAFING", "STRAT_EAGLE_AIRSTRIKE", "STRAT_EAGLE_CLUSTER",
-            "STRAT_EAGLE_SMOKE", "STRAT_ORBITAL_SMOKE", "STRAT_ORBITAL_EMS",
             "STRAT_EMS_MORTAR", "STRAT_FLAMETHROWER", "STRAT_FAST_RECON",
+            "STRAT_ORBITAL_PRECISION", "STRAT_EAGLE_NAPALM",
+            "STRAT_EAGLE_110MM", "STRAT_EAGLE_500KG",
+            "STRAT_GUARD_DOG", "STRAT_GUARD_DOG_ROVER", "STRAT_K9",
         ],
     },
 
@@ -346,21 +382,27 @@ export const POOLS = {
         primaries: [
             "PRI_LIBERATOR", "PRI_DEFENDER", "PRI_KNIGHT",
             "PRI_BREAKER", "PRI_SLUGGER", "PRI_SICKLE_LAS",
-            "PRI_SCORCHER_PLAS",
+            "PRI_SCORCHER_PLAS", "PRI_COYOTE", "PRI_PACIFIER",
+            "PRI_ONETWO", "PRI_LIBERATOR_PEN", "PRI_DEADEYE",
+            "PRI_REPRIMAND",
         ],
         secondaries: [
             "SEC_SENATOR", "SEC_VERDICT", "SEC_REDEEMER",
-            "SEC_PEACEMAKER",
+            "SEC_PEACEMAKER", "SEC_BUSHWACKER", "SEC_RE_EDUCATOR",
         ],
         throwables: [
-            "THR_FRAG", "THR_IMPACT", "THR_HIGH_EXPLOSIVE",
-            "THR_THERMITE", "THR_STUN",
+            "THR_FRAG", "THR_HIGH_EXPLOSIVE",
+            "THR_THERMITE", "THR_STUN", "THR_INCENDIARY",
+            "THR_PINEAPPLE", "THR_SMOKESCREEN", "THR_SEEKER",
         ],
         stratagems: [
             "STRAT_EXO_PATRIOT", "STRAT_EXO_EMANCIPATOR",
             "STRAT_FAST_RECON", "STRAT_BASTION",
             "STRAT_GUARD_DOG", "STRAT_GUARD_DOG_ROVER", "STRAT_HOT_DOG",
             "STRAT_K9", "STRAT_DOG_BREATH", "STRAT_SUPPLY_PACK",
+            "STRAT_MACHINEGUN", "STRAT_EXPENDABLE_AT", "STRAT_LASER_CANNON",
+            "STRAT_HMG", "STRAT_DEFOLIATION_TOOL", "STRAT_ORBITAL_RAILCANNON",
+            "STRAT_ANTI_TANK_MINES",
         ],
     },
 
@@ -370,15 +412,20 @@ export const POOLS = {
         color: "#fdd835",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_ADJUDICATOR",
-            "PRI_DEFENDER", "PRI_TENDERIZER", "PRI_DILLIGENCE",
+            "PRI_DEFENDER", "PRI_TENDERIZER",
             "PRI_SCORCHER_PLAS", "PRI_SICKLE_LAS",
+            "PRI_REPRIMAND", "PRI_DOUBLE_FREEDOM", "PRI_HALT",
+            "PRI_DEADEYE", "PRI_JAR_DOMINATOR", "PRI_VARIABLE",
+            "PRI_ERUPTOR",
         ],
         secondaries: [
             "SEC_VERDICT", "SEC_SENATOR", "SEC_REDEEMER",
-            "SEC_GRENADE_PISTOL",
+            "SEC_GRENADE_PISTOL", "SEC_MACHETE", "SEC_STUN_BATON",
+            "SEC_BUSHWACKER", "SEC_ULTIMATUM", "SEC_CRISPER",
         ],
         throwables: [
-            "THR_STUN", "THR_SHIELD", "THR_LURE_MINE",
+            "THR_STUN", "THR_SHIELD", "THR_SEEKER",
+            "THR_IMPACT", "THR_THERMITE", "THR_ARC",
         ],
         stratagems: [
             "STRAT_ORBITAL_EMS",
@@ -386,8 +433,9 @@ export const POOLS = {
             "STRAT_MORTAR_SENTRY", "STRAT_ROCKET_SENTRY", "STRAT_TESLA_TOWER",
             "STRAT_EMS_MORTAR", "STRAT_FLAME_SENTRY", "STRAT_LASER_SENTRY",
             "STRAT_HMG_EMPLACEMENT", "STRAT_GRENADIER_BATTLEMENT", "STRAT_AT_EMPLACEMENT",
-            "STRAT_GUARD_DOG", "STRAT_GUARD_DOG_ROVER", "STRAT_HOT_DOG",
-            "STRAT_K9", "STRAT_DOG_BREATH", "STRAT_SUPPLY_PACK",
+            "STRAT_GUARD_DOG", "STRAT_HOT_DOG", "STRAT_SUPPLY_PACK",
+            "STRAT_ONE_TRUE_FLAG", "STRAT_RECOILLESS", "STRAT_AUTOCANNON",
+            "STRAT_EXPENDABLE_AT",
         ],
     },
 };
