@@ -1,0 +1,340 @@
+/* ═══════════ COLLECTION MANAGER MODAL ═══════════ */
+
+/* Manage Collection Button */
+.collection-btn {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: transparent;
+    border: 1px solid var(--border-highlight);
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    clip-path: polygon(3% 0, 100% 0, 97% 100%, 0 100%);
+    margin-bottom: 0.75rem;
+}
+
+.collection-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent-dark);
+    background: rgba(245, 197, 24, 0.05);
+}
+
+.collection-btn .badge {
+    color: var(--danger);
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+}
+
+/* Modal Overlay */
+.collection-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+}
+
+.collection-overlay.hidden {
+    display: none;
+}
+
+/* Modal Container */
+.collection-modal {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-highlight);
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* Modal Header */
+.collection-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-card);
+}
+
+.collection-header h2 {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+}
+
+.collection-close {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    line-height: 1;
+    transition: color 0.2s;
+    font-family: 'Oswald', sans-serif;
+}
+
+.collection-close:hover {
+    color: var(--text);
+}
+
+/* Action Buttons Bar */
+.collection-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.collection-action-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.collection-action-btn:hover {
+    color: var(--text);
+    border-color: var(--border-highlight);
+    background: var(--bg-card-hover);
+}
+
+/* Modal Body */
+.collection-body {
+    padding: 0.5rem 0;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+/* Section Divider */
+.collection-section-divider {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-label);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem 0.5rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Group Header (collapsible) */
+.collection-group {
+    border-bottom: 1px solid var(--border);
+}
+
+.collection-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    user-select: none;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: inherit;
+    text-align: left;
+}
+
+.collection-group-header:hover {
+    background: var(--bg-card);
+}
+
+.group-arrow {
+    font-size: 0.65rem;
+    color: var(--text-label);
+    transition: transform 0.2s;
+    width: 0.75rem;
+    flex-shrink: 0;
+}
+
+.collection-group.expanded .group-arrow {
+    transform: rotate(90deg);
+}
+
+/* Group Toggle Checkbox */
+.group-toggle {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-highlight);
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    color: var(--accent);
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+.group-toggle.all-on {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.group-toggle.some-on {
+    border-color: var(--accent-dark);
+    color: var(--accent);
+}
+
+.group-name {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    flex-grow: 1;
+}
+
+.group-count {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-label);
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+
+.group-count.has-disabled {
+    color: var(--danger);
+}
+
+/* Group Items (collapsible content) */
+.collection-group-items {
+    display: none;
+    padding: 0 1.5rem 0.5rem 3.25rem;
+}
+
+.collection-group.expanded .collection-group-items {
+    display: block;
+}
+
+/* Individual Item Toggle */
+.collection-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.collection-item:hover {
+    opacity: 0.85;
+}
+
+.item-toggle {
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--border-highlight);
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.55rem;
+    color: transparent;
+    transition: all 0.15s;
+}
+
+.item-toggle.enabled {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.item-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.collection-item.disabled .item-label {
+    color: var(--text-label);
+    text-decoration: line-through;
+    text-decoration-color: var(--border-highlight);
+}
+
+.item-slot-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-label);
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* ═══════════ POOL CARD WARNINGS ═══════════ */
+
+.pool-card.pool-warning {
+    position: relative;
+}
+
+.pool-card.pool-warning::after {
+    content: '!';
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    width: 20px;
+    height: 20px;
+    background: var(--danger);
+    color: var(--bg-dark);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+
+@media (max-width: 768px) {
+    .collection-overlay {
+        padding: 0;
+    }
+
+    .collection-modal {
+        max-width: 100%;
+        min-height: 100vh;
+        border: none;
+    }
+
+    .collection-body {
+        max-height: none;
+    }
+
+    .collection-group-items {
+        padding-left: 2.5rem;
+    }
+}

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collection.css">
 </head>
 <body>
     <div class="scanlines"></div>
@@ -26,10 +27,15 @@
         </section>
 
         <div class="action-bar">
+            <button id="collection-btn" class="collection-btn">
+                MANAGE COLLECTION
+            </button>
             <button id="randomize-btn" class="randomize-btn" disabled>
                 <span class="btn-text">DEPLOY LOADOUT</span>
             </button>
         </div>
+
+        <div id="collection-overlay" class="collection-overlay hidden"></div>
 
         <section id="loadout-display" class="loadout-display hidden">
             <h2 id="loadout-pool-name" class="section-title loadout-title"></h2>
