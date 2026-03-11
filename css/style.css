@@ -43,6 +43,25 @@ body {
     overflow-x: hidden;
 }
 
+/* Chaos mode bottom gradient */
+body.chaos-active::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+        to top,
+        rgba(217, 70, 239, 0.12) 0%,
+        rgba(217, 70, 239, 0.05) 30%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.4s ease;
+}
+
 /* Scanline overlay for CRT military monitor feel */
 .scanlines {
     position: fixed;

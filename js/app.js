@@ -53,6 +53,7 @@ function selectPool(poolId) {
         c.classList.toggle('selected', c.dataset.poolId === poolId)
     );
     document.getElementById('chaos-btn').classList.remove('active');
+    document.body.classList.remove('chaos-active');
 
     const btn = document.getElementById('randomize-btn');
     btn.disabled = false;
@@ -71,6 +72,7 @@ function onChaos() {
     // Deselect any pool card
     document.querySelectorAll('.pool-card').forEach(c => c.classList.remove('selected'));
     document.getElementById('chaos-btn').classList.add('active');
+    document.body.classList.add('chaos-active');
 
     const btn = document.getElementById('randomize-btn');
     btn.disabled = false;
