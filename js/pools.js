@@ -3,8 +3,8 @@ export const POOLS = {
     // ═══════════ COMBAT ROLES ═══════════
 
     anti_heavy: {
-        display_name: "Anti-Heavy",
-        description: "Heavy penetration. Bring down the big ones.",
+        display_name: "Titanbreaker",
+        description: "For when liberty needs a big hole punched through something.",
         color: "#ef5350",
         primaries: [
             "PRI_ERUPTOR", "PRI_DOUBLE_EDGE_SICKLE", "PRI_TORCHER_FLAM",
@@ -31,8 +31,8 @@ export const POOLS = {
     },
 
     anti_chaff: {
-        display_name: "Anti-Chaff",
-        description: "Wide spread damage. Clear the swarm.",
+        display_name: "Crowd Control Directive",
+        description: "Converts enemy numbers into enemy statistics.",
         color: "#ff9800",
         primaries: [
             "PRI_BREAKER", "PRI_BREAKER_SPNPR", "PRI_BREAKER_INCIN",
@@ -63,8 +63,8 @@ export const POOLS = {
     },
 
     support: {
-        display_name: "Support",
-        description: "Hold the team together. Supply and suppress.",
+        display_name: "Combat Quartermaster",
+        description: "Because democracy runs best when someone remembers the ammo.",
         color: "#26c6da",
         primaries: [
             "PRI_DEFENDER", "PRI_KNIGHT", "PRI_STA_SMG", "PRI_M7S_SMG",
@@ -91,8 +91,8 @@ export const POOLS = {
     },
 
     generalist: {
-        display_name: "Generalist",
-        description: "Balanced kit. Ready for anything.",
+        display_name: "Jackboot Standard",
+        description: "Jack of all trades, servant of Super Earth.",
         color: "#78909c",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_ADJUDICATOR",
@@ -127,7 +127,7 @@ export const POOLS = {
 
     pyromaniac: {
         display_name: "Pyromaniac",
-        description: "If it breathes, it burns.",
+        description: "Applies liberty at extremely high temperatures.",
         color: "#ff5722",
         primaries: [
             "PRI_TORCHER_FLAM", "PRI_BREAKER_INCIN", "PRI_COOKOUT",
@@ -149,8 +149,8 @@ export const POOLS = {
     },
 
     grenadier: {
-        display_name: "Grenadier",
-        description: "Everything explodes. No exceptions.",
+        display_name: "Ordinance Enthusiast",
+        description: "Solves every problem by making it several smaller problems.",
         color: "#ffc107",
         primaries: [
             "PRI_ERUPTOR", "PRI_EXPLODING_XBOW", "PRI_SCORCHER_PLAS",
@@ -174,8 +174,8 @@ export const POOLS = {
     },
 
     shock_trooper: {
-        display_name: "Shock Trooper",
-        description: "Ride the lightning. Stun and fry.",
+        display_name: "Arcborne",
+        description: "Introduces the enemy to the exciting future of electricity.",
         color: "#2196f3",
         primaries: [
             "PRI_BLITZER", "PRI_ACCELERATOR_RIFLE", "PRI_PACIFIER",
@@ -195,8 +195,8 @@ export const POOLS = {
     },
 
     stinkbug: {
-        display_name: "Stinkbug",
-        description: "Toxic. Corrosive. Breathe it in.",
+        display_name: "Biohazard Doctrine",
+        description: "Turns the battlefield into an air quality emergency.",
         color: "#7cb342",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_LIBERATOR_CONC",
@@ -238,8 +238,8 @@ export const POOLS = {
     },
 
     laser_head: {
-        display_name: "Laser Head",
-        description: "Focused beams. Precision burns.",
+        display_name: "Proton Patriot",
+        description: "Proof that concentrated light can carry concentrated freedom.",
         color: "#29b6f6",
         primaries: [
             "PRI_SCYTHE_LAS", "PRI_SICKLE_LAS", "PRI_DOUBLE_EDGE_SICKLE",
@@ -264,7 +264,7 @@ export const POOLS = {
 
     melee_maniac: {
         display_name: "Melee Maniac",
-        description: "Get close. Stay close. Hit harder.",
+        description: "Why shoot the enemy from far away when you can terrify them personally?",
         color: "#d32f2f",
         primaries: [
             "PRI_BREAKER", "PRI_BREAKER_SPNPR", "PRI_BREAKER_INCIN",
@@ -293,8 +293,8 @@ export const POOLS = {
     },
 
     marksman: {
-        display_name: "Marksman",
-        description: "One shot. One kill. Long range dominance.",
+        display_name: "Deadeye Decree",
+        description: "Delivers democracy one carefully placed round at a time.",
         color: "#4caf50",
         primaries: [
             "PRI_AMENDMENT", "PRI_CONSTITUTION", "PRI_DEADEYE",
@@ -319,8 +319,8 @@ export const POOLS = {
     },
 
     stealth_diver: {
-        display_name: "Stealth Diver",
-        description: "Silent. Unseen. In and out.",
+        display_name: "Blackout Operative",
+        description: "Leaves nothing behind but completed objectives and confused survivors.",
         color: "#00695c",
         primaries: [
             "PRI_DEFENDER", "PRI_M7S_SMG", "PRI_SUPPRESSOR",
@@ -345,8 +345,8 @@ export const POOLS = {
     },
 
     truffle_hunter: {
-        display_name: "Truffle Hunter",
-        description: "Fast in. Fast out. Grab and go.",
+        display_name: "Rapid Acquisition Unit",
+        description: "Digs up Super Earth's treasures before the enemy knows they were there.",
         color: "#8d6e63",
         primaries: [
             "PRI_KNIGHT", "PRI_DEFENDER", "PRI_STA_SMG", "PRI_M7S_SMG",
@@ -376,8 +376,8 @@ export const POOLS = {
     // ═══════════ HARDWARE ═══════════
 
     mechdiver: {
-        display_name: "Mechdiver",
-        description: "Mount up. Mechanical superiority.",
+        display_name: "Steel Cavalry",
+        description: "When walking is not enough, arrive as a war crime with legs.",
         color: "#546e7a",
         primaries: [
             "PRI_LIBERATOR", "PRI_DEFENDER", "PRI_KNIGHT",
@@ -407,8 +407,8 @@ export const POOLS = {
     },
 
     the_engineer: {
-        display_name: "The Engineer",
-        description: "Build the fortress. Let the turrets do the work.",
+        display_name: "Fortification Specialist",
+        description: "Why fight unfairly when turrets can do it for you?",
         color: "#fdd835",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_ADJUDICATOR",
@@ -436,6 +436,190 @@ export const POOLS = {
             "STRAT_GUARD_DOG", "STRAT_HOT_DOG", "STRAT_SUPPLY_PACK",
             "STRAT_ONE_TRUE_FLAG", "STRAT_RECOILLESS", "STRAT_AUTOCANNON",
             "STRAT_EXPENDABLE_AT",
+        ],
+    },
+
+    // ═══════════ NEW POOLS ═══════════
+
+    induction_kit: {
+        display_name: "Induction Kit",
+        description: "Everything a new Helldiver needs to spread democracy, panic responsibly, and survive at least one briefing.",
+        color: "#4fc3f7",
+        primaries: [
+            "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_STA_ASS_RIFLE",
+            "PRI_CONSTITUTION", "PRI_DILLIGENCE", "PRI_DEFENDER",
+            "PRI_SLUGGER", "PRI_BREAKER",
+        ],
+        secondaries: [
+            "SEC_PEACEMAKER", "SEC_VERDICT", "SEC_SENATOR",
+            "SEC_HATCHET", "SEC_GRENADE_PISTOL",
+        ],
+        throwables: [
+            "THR_FRAG", "THR_HIGH_EXPLOSIVE", "THR_STUN",
+            "THR_SMOKE", "THR_THERMITE",
+        ],
+        stratagems: [
+            "STRAT_MACHINEGUN", "STRAT_EXPENDABLE_AT", "STRAT_STALWART",
+            "STRAT_ANTI_MATERIEL", "STRAT_GRENADE_LAUNCHER", "STRAT_FLAMETHROWER",
+            "STRAT_ONE_TRUE_FLAG",
+            "STRAT_ORBITAL_PRECISION", "STRAT_ORBITAL_GATLING",
+            "STRAT_ORBITAL_120MM", "STRAT_ORBITAL_SMOKE", "STRAT_ORBITAL_RAILCANNON",
+            "STRAT_EAGLE_STRAFING", "STRAT_EAGLE_AIRSTRIKE",
+            "STRAT_EAGLE_CLUSTER", "STRAT_EAGLE_500KG",
+            "STRAT_ANTI_PERSONNEL_MINES", "STRAT_ANTI_TANK_MINES",
+            "STRAT_SHIELD_GENERATOR",
+            "STRAT_MG_SENTRY", "STRAT_MORTAR_SENTRY",
+            "STRAT_SUPPLY_PACK", "STRAT_JUMP_PACK",
+            "STRAT_BALLISTIC_SHIELD", "STRAT_GUARD_DOG",
+        ],
+    },
+
+    the_historian: {
+        display_name: "The Historian",
+        description: "Proves that even obsolete equipment can still produce modern casualties.",
+        color: "#a1887f",
+        primaries: [
+            "PRI_LIBERATOR", "PRI_LIBERATOR_CONC", "PRI_LIBERATOR_CARB",
+            "PRI_COYOTE", "PRI_CONSTITUTION", "PRI_DEADEYE",
+            "PRI_DOUBLE_FREEDOM", "PRI_BREAKER_SPNPR", "PRI_M90A_SGUN",
+            "PRI_HALT", "PRI_VARIABLE",
+        ],
+        secondaries: [
+            "SEC_VERDICT", "SEC_SENATOR", "SEC_REDEEMER",
+            "SEC_HATCHET", "SEC_MACHETE", "SEC_BUSHWACKER",
+        ],
+        throwables: [
+            "THR_FRAG", "THR_PINEAPPLE", "THR_DYNAMITE",
+            "THR_STUN", "THR_THERMITE", "THR_SMOKE",
+            "THR_THROWING_KNIFE",
+        ],
+        stratagems: [
+            "STRAT_MACHINEGUN", "STRAT_ANTI_MATERIEL", "STRAT_FLAMETHROWER",
+            "STRAT_GRENADE_LAUNCHER", "STRAT_SPEAR", "STRAT_SPEARGUN",
+            "STRAT_EXPENDABLE_NAPALM", "STRAT_C4_PACK", "STRAT_ONE_TRUE_FLAG",
+            "STRAT_ORBITAL_NAPALM", "STRAT_ORBITAL_GAS", "STRAT_ORBITAL_SMOKE",
+            "STRAT_EAGLE_STRAFING", "STRAT_EAGLE_AIRSTRIKE",
+            "STRAT_EAGLE_CLUSTER", "STRAT_EAGLE_SMOKE",
+            "STRAT_EAGLE_NAPALM", "STRAT_EAGLE_110MM",
+            "STRAT_HMG_EMPLACEMENT", "STRAT_GRENADIER_BATTLEMENT",
+            "STRAT_ANTI_PERSONNEL_MINES", "STRAT_MORTAR_SENTRY",
+            "STRAT_SUPPLY_PACK", "STRAT_BALLISTIC_SHIELD",
+            "STRAT_FAST_RECON", "STRAT_BASTION",
+        ],
+    },
+
+    problem_solver: {
+        display_name: "Problem Solver Mk.II",
+        description: "It's simple. Enemy East? Remove East.",
+        color: "#e53935",
+        primaries: [
+            "PRI_LIBERATOR_PEN", "PRI_COYOTE", "PRI_MAC5_ASS_RIFLE",
+            "PRI_ADJUDICATOR", "PRI_ONETWO", "PRI_DEADEYE",
+            "PRI_DILLIGENCE_CS", "PRI_AMENDMENT", "PRI_REPRIMAND",
+            "PRI_SLUGGER", "PRI_HALT", "PRI_DOUBLE_FREEDOM",
+            "PRI_BREAKER_INCIN", "PRI_EXPLODING_XBOW", "PRI_ERUPTOR",
+            "PRI_PURIFIER_PLAS", "PRI_TRIDENT", "PRI_ACCELERATOR_RIFLE",
+            "PRI_PUNISHER_PLAS", "PRI_TORCHER_FLAM", "PRI_JAR_DOMINATOR",
+        ],
+        secondaries: [
+            "SEC_WARRANT", "SEC_SENATOR", "SEC_VERDICT",
+            "SEC_STUN_LANCE", "SEC_SABER", "SEC_GRENADE_PISTOL",
+            "SEC_ULTIMATUM", "SEC_CRISPER",
+        ],
+        throwables: [
+            "THR_DYNAMITE", "THR_HIGH_EXPLOSIVE", "THR_PINEAPPLE",
+            "THR_THERMITE", "THR_PYROTECH", "THR_SEEKER", "THR_GAS",
+        ],
+        stratagems: [
+            "STRAT_GRENADE_LAUNCHER", "STRAT_AUTOCANNON",
+            "STRAT_AIRBURST_LAUNCHER", "STRAT_EPOCH",
+            "STRAT_EXPENDABLE_NAPALM", "STRAT_DE_ESCALATOR",
+            "STRAT_SOLO_SILO", "STRAT_BELT_FED_GL", "STRAT_MAXIGUN",
+            "STRAT_ORBITAL_120MM", "STRAT_ORBITAL_380MM",
+            "STRAT_ORBITAL_AIRBURST", "STRAT_ORBITAL_WALKING",
+            "STRAT_ORBITAL_NAPALM",
+            "STRAT_EAGLE_AIRSTRIKE", "STRAT_EAGLE_CLUSTER",
+            "STRAT_EAGLE_NAPALM", "STRAT_EAGLE_500KG",
+            "STRAT_GRENADIER_BATTLEMENT", "STRAT_AT_EMPLACEMENT",
+            "STRAT_AUTOCANNON_SENTRY", "STRAT_MORTAR_SENTRY",
+            "STRAT_EMS_MORTAR", "STRAT_ROCKET_SENTRY",
+            "STRAT_HOT_DOG", "STRAT_K9", "STRAT_PORTABLE_HELLBOMB",
+            "STRAT_EXO_PATRIOT", "STRAT_EXO_EMANCIPATOR", "STRAT_BASTION",
+        ],
+    },
+
+    democracys_intern: {
+        display_name: "Democracy's Intern",
+        description: "Here to learn, serve, and require constant supervision from a safe distance.",
+        color: "#81c784",
+        primaries: [
+            "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_LIBERATOR_CARB",
+            "PRI_PACIFIER", "PRI_AMENDMENT", "PRI_DILLIGENCE",
+            "PRI_DEFENDER", "PRI_KNIGHT", "PRI_PUNISHER",
+            "PRI_BREAKER", "PRI_SLUGGER", "PRI_SCYTHE_LAS",
+            "PRI_SICKLE_LAS",
+        ],
+        secondaries: [
+            "SEC_PEACEMAKER", "SEC_REDEEMER", "SEC_VERDICT",
+            "SEC_STUN_BATON", "SEC_HATCHET", "SEC_STIM_PISTOL",
+            "SEC_TALON", "SEC_DAGGER_LAS",
+        ],
+        throwables: [
+            "THR_IMPACT", "THR_FRAG", "THR_STUN",
+            "THR_SMOKE", "THR_THROWING_KNIFE", "THR_LURE_MINE",
+            "THR_SHIELD", "THR_SMOKESCREEN",
+        ],
+        stratagems: [
+            "STRAT_STALWART", "STRAT_EXPENDABLE_AT", "STRAT_COMMANDO",
+            "STRAT_SPEAR", "STRAT_WASP_LAUNCHER",
+            "STRAT_ORBITAL_PRECISION", "STRAT_ORBITAL_GAS",
+            "STRAT_ORBITAL_SMOKE", "STRAT_ORBITAL_EMS",
+            "STRAT_EAGLE_SMOKE", "STRAT_EAGLE_110MM",
+            "STRAT_SHIELD_GENERATOR",
+            "STRAT_MG_SENTRY", "STRAT_ROCKET_SENTRY",
+            "STRAT_SUPPLY_PACK", "STRAT_JUMP_PACK", "STRAT_HOVER_PACK",
+            "STRAT_BALLISTIC_SHIELD", "STRAT_SHIELD_PACK",
+            "STRAT_DIRECTIONAL_SHIELD",
+        ],
+    },
+
+    court_marshal: {
+        display_name: "Court Marshal Candidate",
+        description: "Proudly redefining \"acceptable losses\" one squadmate at a time.",
+        color: "#ff7043",
+        primaries: [
+            "PRI_PACIFIER", "PRI_COYOTE", "PRI_ADJUDICATOR",
+            "PRI_TENDERIZER", "PRI_DOUBLE_FREEDOM", "PRI_HALT",
+            "PRI_BREAKER_INCIN", "PRI_EXPLODING_XBOW", "PRI_ERUPTOR",
+            "PRI_PUNISHER_PLAS", "PRI_BLITZER", "PRI_TRIDENT",
+            "PRI_DOUBLE_EDGE_SICKLE", "PRI_TORCHER_FLAM",
+        ],
+        secondaries: [
+            "SEC_STUN_LANCE", "SEC_STUN_BATON", "SEC_GRENADE_PISTOL",
+            "SEC_ULTIMATUM", "SEC_CRISPER", "SEC_LOYALIST",
+        ],
+        throwables: [
+            "THR_DYNAMITE", "THR_PINEAPPLE", "THR_INCENDIARY",
+            "THR_INCENDIARY_IMPACT", "THR_GAS", "THR_PYROTECH", "THR_ARC",
+        ],
+        stratagems: [
+            "STRAT_GRENADE_LAUNCHER", "STRAT_FLAMETHROWER",
+            "STRAT_AIRBURST_LAUNCHER", "STRAT_ARC_THROWER",
+            "STRAT_EPOCH", "STRAT_EXPENDABLE_NAPALM",
+            "STRAT_AUTOCANNON", "STRAT_WASP_LAUNCHER",
+            "STRAT_LEVELLER", "STRAT_SOLO_SILO",
+            "STRAT_ORBITAL_120MM", "STRAT_ORBITAL_380MM",
+            "STRAT_ORBITAL_WALKING", "STRAT_ORBITAL_LASER",
+            "STRAT_ORBITAL_NAPALM",
+            "STRAT_EAGLE_AIRSTRIKE", "STRAT_EAGLE_CLUSTER",
+            "STRAT_EAGLE_NAPALM", "STRAT_EAGLE_500KG",
+            "STRAT_ANTI_PERSONNEL_MINES", "STRAT_INCENDIARY_MINES",
+            "STRAT_GAS_MINES",
+            "STRAT_GATLING_SENTRY", "STRAT_MORTAR_SENTRY",
+            "STRAT_TESLA_TOWER", "STRAT_LASER_SENTRY", "STRAT_FLAME_SENTRY",
+            "STRAT_GUARD_DOG", "STRAT_GUARD_DOG_ROVER",
+            "STRAT_HOT_DOG", "STRAT_K9", "STRAT_DOG_BREATH",
+            "STRAT_PORTABLE_HELLBOMB", "STRAT_WARP_PACK",
         ],
     },
 };
