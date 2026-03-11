@@ -3,6 +3,7 @@ import { generateLoadout } from './randomizer.js';
 import * as collection from './collection.js';
 
 let currentPool = null;
+let chaosMode = false;
 let poolWarningDebounce = null;
 
 // ═══════════ INIT ═══════════
@@ -14,6 +15,7 @@ function init() {
     updateCollectionBadge();
 
     document.getElementById('randomize-btn').addEventListener('click', onRandomize);
+    document.getElementById('chaos-btn').addEventListener('click', onChaos);
     document.getElementById('collection-btn').addEventListener('click', openCollectionModal);
 
     document.addEventListener('keydown', (e) => {
@@ -45,10 +47,12 @@ function renderPoolSelector() {
 
 function selectPool(poolId) {
     currentPool = poolId;
+    chaosMode = false;
 
     document.querySelectorAll('.pool-card').forEach(c =>
         c.classList.toggle('selected', c.dataset.poolId === poolId)
     );
+    document.getElementById('chaos-btn').classList.remove('active');
 
     const btn = document.getElementById('randomize-btn');
     btn.disabled = false;
@@ -60,15 +64,45 @@ function selectPool(poolId) {
 
 // ═══════════ RANDOMIZE ═══════════
 
+function onChaos() {
+    chaosMode = true;
+    currentPool = null;
+
+    // Deselect any pool card
+    document.querySelectorAll('.pool-card').forEach(c => c.classList.remove('selected'));
+    document.getElementById('chaos-btn').classList.add('active');
+
+    const btn = document.getElementById('randomize-btn');
+    btn.disabled = false;
+    btn.classList.add('ready');
+
+    // Generate immediately
+    deployChaos();
+}
+
+function deployChaos() {
+    const chaosPool = collection.buildChaosPool();
+    const loadout = generateLoadout(chaosPool);
+    renderLoadout(loadout, chaosPool);
+    triggerDeployAnimation();
+}
+
 function onRandomize() {
+    if (chaosMode) {
+        deployChaos();
+        return;
+    }
+
     if (!currentPool) return;
 
     const pool = POOLS[currentPool];
     const filteredPool = collection.filterPool(pool);
     const loadout = generateLoadout(filteredPool);
     renderLoadout(loadout, pool);
+    triggerDeployAnimation();
+}
 
-    // Trigger animation
+function triggerDeployAnimation() {
     const display = document.getElementById('loadout-display');
     display.classList.remove('hidden');
     display.classList.remove('deploy-anim');

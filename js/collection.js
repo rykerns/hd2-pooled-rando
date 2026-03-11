@@ -159,6 +159,34 @@ export function filterPool(pool) {
     };
 }
 
+// ═══════════ Chaos Mode ═══════════
+
+export function buildChaosPool() {
+    const primaries = [];
+    const secondaries = [];
+    const throwables = [];
+
+    for (const [id, meta] of Object.entries(ITEM_META)) {
+        if (disabledItems.has(id)) continue;
+        if (meta.slot === 'primary') primaries.push(id);
+        else if (meta.slot === 'secondary') secondaries.push(id);
+        else if (meta.slot === 'grenade') throwables.push(id);
+    }
+
+    const stratagems = Object.keys(STRATAGEM_META)
+        .filter(id => !disabledStratagems.has(id));
+
+    return {
+        display_name: 'CHAOS MODE',
+        description: 'All items. No rules.',
+        color: '#d946ef',
+        primaries,
+        secondaries,
+        throwables,
+        stratagems,
+    };
+}
+
 // ═══════════ Stats ═══════════
 
 export function getDisabledCount() {
