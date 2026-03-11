@@ -8,10 +8,10 @@ let currentDifficulty = 'recruit';
 let poolWarningDebounce = null;
 
 const DIFFICULTY_DESCRIPTIONS = {
-    recruit: 'Max 1 support weapon, 1 backpack & 1 expendable.',
-    helldiver: 'Max 1 support weapon & 1 backpack. Expendables unrestricted.',
-    legend: 'No restrictions. Pure chaos.',
-    nightmare: 'Equipment only. No call-downs. Good luck, Helldiver.',
+    recruit: 'For Helldivers still learning which end of the stratagem beacon inspires democracy.',
+    helldiver: 'The approved balance of firepower, flexibility, and survivable poor judgment.',
+    legend: 'Maximum liberty, minimum oversight, and absolutely no questions from command.',
+    nightmare: 'For patriots who believe planning is weakness and slot conflicts build character.',
 };
 
 // ═══════════ INIT ═══════════
@@ -26,7 +26,8 @@ function init() {
     document.getElementById('chaos-btn').addEventListener('click', onChaos);
     document.getElementById('collection-btn').addEventListener('click', openCollectionModal);
 
-    // Difficulty selector
+    // Difficulty selector — apply default state on load (ensures color + description)
+    selectDifficulty(currentDifficulty);
     document.querySelectorAll('.diff-btn').forEach(btn => {
         btn.addEventListener('click', () => selectDifficulty(btn.dataset.difficulty));
     });
