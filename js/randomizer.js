@@ -23,17 +23,111 @@ function pickRandom(arr, count) {
 }
 
 /**
+ * Check if a stratagem candidate can be added under current slot state.
+ *
+ * Difficulty rules:
+ *   easy   – no restrictions
+ *   medium – max 1 support-weapon slot, max 1 backpack slot
+ *            (combined fills both); expendables are unrestricted
+ *   hard   – same as medium PLUS max 1 expendable total
+ */
+function canPick(meta, state, difficulty) {
+    const slot = meta.slot || null;
+    const isExpendable = !!meta.expendable;
+
+    // Expendable items never permanently occupy a slot
+    if (isExpendable) {
+        if (difficulty === 'hard' && state.expendableCount >= 1) return false;
+        return true;
+    }
+
+    // Non-expendable slot checks
+    if (slot === 'support_weapon') {
+        return !state.supportWeaponUsed;
+    }
+    if (slot === 'backpack') {
+        return !state.backpackUsed;
+    }
+    if (slot === 'combined') {
+        return !state.supportWeaponUsed && !state.backpackUsed;
+    }
+
+    // No slot (eagles, orbitals, defensives) — always fine
+    return true;
+}
+
+/**
+ * Update slot state after picking a stratagem.
+ */
+function applyPick(meta, state) {
+    const slot = meta.slot || null;
+    const isExpendable = !!meta.expendable;
+
+    if (isExpendable) {
+        state.expendableCount++;
+        return;
+    }
+
+    if (slot === 'support_weapon') {
+        state.supportWeaponUsed = true;
+    } else if (slot === 'backpack') {
+        state.backpackUsed = true;
+    } else if (slot === 'combined') {
+        state.supportWeaponUsed = true;
+        state.backpackUsed = true;
+    }
+}
+
+/**
+ * Pick stratagems with difficulty constraints.
+ * Shuffles candidates and greedily selects up to `count` that satisfy rules.
+ */
+function pickStratagems(pool, count, difficulty) {
+    if (difficulty === 'easy') {
+        return pickRandom(pool, count);
+    }
+
+    const shuffled = shuffle([...new Set(pool)]);
+    const selected = [];
+    const state = {
+        supportWeaponUsed: false,
+        backpackUsed: false,
+        expendableCount: 0,
+    };
+
+    for (const id of shuffled) {
+        if (selected.length >= count) break;
+        const meta = STRATAGEM_META[id];
+        if (!meta) continue;
+
+        if (canPick(meta, state, difficulty)) {
+            selected.push(id);
+            applyPick(meta, state);
+        }
+    }
+
+    return selected;
+}
+
+/**
  * Generate a full loadout from a pool definition.
+ * @param {object} pool       – pool object with stratagems, primaries, etc.
+ * @param {string} difficulty – 'easy' | 'medium' | 'hard' (default: 'easy')
  * Returns { stratagems, primary, secondary, throwable, warnings }
  */
-export function generateLoadout(pool) {
+export function generateLoadout(pool, difficulty = 'easy') {
     const warnings = [];
 
-    // 4 unique stratagems
+    // 4 unique stratagems (difficulty-aware)
     if (pool.stratagems.length < 4) {
         warnings.push(`Pool only has ${pool.stratagems.length} stratagem(s) — need 4.`);
     }
-    const stratagemIds = pickRandom(pool.stratagems, 4);
+    const stratagemIds = pickStratagems(pool.stratagems, 4, difficulty);
+
+    if (stratagemIds.length < 4 && pool.stratagems.length >= 4) {
+        warnings.push(`Only ${stratagemIds.length} valid stratagem(s) for ${difficulty} difficulty.`);
+    }
+
     const stratagems = stratagemIds
         .map(id => STRATAGEM_META[id] ? { id, ...STRATAGEM_META[id] } : null)
         .filter(Boolean);

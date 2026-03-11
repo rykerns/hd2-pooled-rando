@@ -4,7 +4,14 @@ import * as collection from './collection.js';
 
 let currentPool = null;
 let chaosMode = false;
+let currentDifficulty = 'easy';
 let poolWarningDebounce = null;
+
+const DIFFICULTY_DESCRIPTIONS = {
+    easy: 'No restrictions. Pure chaos.',
+    medium: 'Max 1 support weapon & 1 backpack. Expendables unrestricted.',
+    hard: 'Max 1 support weapon, 1 backpack & 1 expendable.',
+};
 
 // ═══════════ INIT ═══════════
 
@@ -17,6 +24,11 @@ function init() {
     document.getElementById('randomize-btn').addEventListener('click', onRandomize);
     document.getElementById('chaos-btn').addEventListener('click', onChaos);
     document.getElementById('collection-btn').addEventListener('click', openCollectionModal);
+
+    // Difficulty selector
+    document.querySelectorAll('.diff-btn').forEach(btn => {
+        btn.addEventListener('click', () => selectDifficulty(btn.dataset.difficulty));
+    });
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeCollectionModal();
@@ -63,6 +75,19 @@ function selectPool(poolId) {
     onRandomize();
 }
 
+// ═══════════ DIFFICULTY ═══════════
+
+function selectDifficulty(diff) {
+    currentDifficulty = diff;
+
+    document.querySelectorAll('.diff-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.difficulty === diff)
+    );
+
+    document.getElementById('difficulty-desc').textContent =
+        DIFFICULTY_DESCRIPTIONS[diff] || '';
+}
+
 // ═══════════ RANDOMIZE ═══════════
 
 function onChaos() {
@@ -84,7 +109,7 @@ function onChaos() {
 
 function deployChaos() {
     const chaosPool = collection.buildChaosPool();
-    const loadout = generateLoadout(chaosPool);
+    const loadout = generateLoadout(chaosPool, currentDifficulty);
     renderLoadout(loadout, chaosPool);
     triggerDeployAnimation();
 }
@@ -99,7 +124,7 @@ function onRandomize() {
 
     const pool = POOLS[currentPool];
     const filteredPool = collection.filterPool(pool);
-    const loadout = generateLoadout(filteredPool);
+    const loadout = generateLoadout(filteredPool, currentDifficulty);
     renderLoadout(loadout, pool);
     triggerDeployAnimation();
 }

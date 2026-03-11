@@ -340,6 +340,78 @@ body.chaos-active::after {
     opacity: 0.7;
 }
 
+/* ═══════════ DIFFICULTY SELECTOR ═══════════ */
+
+.difficulty-selector {
+    text-align: center;
+    padding: 1rem 0 0.5rem;
+}
+
+.difficulty-label {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-label);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+.difficulty-options {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border: 1px solid var(--border);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.diff-btn {
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    background: var(--bg-card);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.diff-btn:not(:last-child) {
+    border-right: 1px solid var(--border);
+}
+
+.diff-btn:hover {
+    background: var(--bg-card-hover);
+    color: var(--text);
+}
+
+.diff-btn.active {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.diff-btn.active[data-difficulty="medium"] {
+    background: var(--pen-medium);
+}
+
+.diff-btn.active[data-difficulty="hard"] {
+    background: var(--pen-heavy);
+}
+
+.difficulty-desc {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-label);
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+    min-height: 1.2em;
+    transition: color 0.2s;
+}
+
 /* ═══════════ DEPLOY BUTTON ═══════════ */
 
 .action-bar {
