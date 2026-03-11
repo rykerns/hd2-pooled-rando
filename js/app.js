@@ -1,5 +1,7 @@
 import { POOLS } from './pools.js';
 import { generateLoadout } from './randomizer.js';
+import { ITEM_META } from './items.js';
+import { STRATAGEM_META } from './stratagems.js';
 import * as collection from './collection.js';
 
 let currentPool = null;
@@ -32,8 +34,23 @@ function init() {
         btn.addEventListener('click', () => selectDifficulty(btn.dataset.difficulty));
     });
 
+    // Pool info button delegation (stopPropagation prevents pool selection)
+    document.getElementById('pool-grid').addEventListener('click', (e) => {
+        const infoBtn = e.target.closest('.pool-info-btn');
+        if (infoBtn) {
+            e.stopPropagation();
+            openPoolInfoModal(infoBtn.dataset.poolId);
+        }
+    });
+
+    // Pool info overlay click handler (registered once)
+    document.getElementById('pool-info-overlay').addEventListener('click', handlePoolInfoClick);
+
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeCollectionModal();
+        if (e.key === 'Escape') {
+            closePoolInfoModal();
+            closeCollectionModal();
+        }
     });
 }
 
@@ -53,8 +70,13 @@ function renderPoolSelector() {
                 <h3 class="pool-name">${pool.display_name}</h3>
                 <p class="pool-desc">${pool.description}</p>
             </div>
+            <span class="pool-info-btn" data-pool-id="${poolId}" title="View pool contents">&#9432;</span>
         `;
-        card.addEventListener('click', () => selectPool(poolId));
+        card.addEventListener('click', (e) => {
+            // Don't select pool if info button was clicked
+            if (e.target.closest('.pool-info-btn')) return;
+            selectPool(poolId);
+        });
         container.appendChild(card);
     }
 }
@@ -486,6 +508,172 @@ function updateGroupCounter(groupEl) {
     } else {
         toggleEl.innerHTML = '';
     }
+}
+
+// ═══════════ POOL INFO MODAL ═══════════
+
+function openPoolInfoModal(poolId) {
+    const overlay = document.getElementById('pool-info-overlay');
+    overlay.classList.remove('hidden');
+    renderPoolInfoModal(poolId);
+    document.body.style.overflow = 'hidden';
+}
+
+function closePoolInfoModal() {
+    const overlay = document.getElementById('pool-info-overlay');
+    if (overlay.classList.contains('hidden')) return;
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+function handlePoolInfoClick(e) {
+    const overlay = document.getElementById('pool-info-overlay');
+
+    // Close on overlay background click
+    if (e.target === overlay) {
+        closePoolInfoModal();
+        return;
+    }
+
+    // Close button
+    const closeBtn = e.target.closest('[data-action="close-info"]');
+    if (closeBtn) {
+        closePoolInfoModal();
+        return;
+    }
+}
+
+function renderPoolInfoModal(poolId) {
+    const overlay = document.getElementById('pool-info-overlay');
+    const pool = POOLS[poolId];
+    if (!pool) return;
+
+    // Group stratagems by category
+    const categoryOrder = ['eagle', 'orbital', 'support_weapon', 'backpack', 'defensive', 'vehicle'];
+    const categoryLabels = {
+        eagle: 'EAGLE STRIKES',
+        orbital: 'ORBITAL STRIKES',
+        support_weapon: 'SUPPORT WEAPONS',
+        backpack: 'BACKPACKS',
+        defensive: 'DEFENSIVES & SENTRIES',
+        vehicle: 'VEHICLES',
+    };
+    const stratagemsByCategory = {};
+    for (const id of pool.stratagems) {
+        const meta = STRATAGEM_META[id];
+        if (!meta) continue;
+        const cat = meta.category || 'unknown';
+        if (!stratagemsByCategory[cat]) stratagemsByCategory[cat] = [];
+        stratagemsByCategory[cat].push({ id, ...meta });
+    }
+
+    // Build HTML
+    let html = `
+        <div class="pool-info-modal">
+            <div class="pool-info-header" style="border-left-color: ${pool.color};">
+                <div>
+                    <h2 style="color: ${pool.color};">${pool.display_name}</h2>
+                    <p class="pool-info-desc">${pool.description}</p>
+                </div>
+                <button class="collection-close" data-action="close-info">X</button>
+            </div>
+    `;
+
+    // Design Philosophy
+    if (pool.rationale) {
+        html += `
+            <div class="pool-info-rationale">
+                <h3 class="pool-info-section-label">DESIGN PHILOSOPHY</h3>
+                <p>${pool.rationale}</p>
+            </div>
+        `;
+    }
+
+    html += `<div class="pool-info-body">`;
+
+    // Stratagems section
+    html += `<div class="pool-info-section-divider">STRATAGEMS <span class="pool-info-count">(${pool.stratagems.length})</span></div>`;
+
+    for (const cat of categoryOrder) {
+        const group = stratagemsByCategory[cat];
+        if (!group || group.length === 0) continue;
+
+        html += `
+            <div class="pool-info-group">
+                <div class="pool-info-group-label">${categoryLabels[cat] || cat.toUpperCase()}</div>
+        `;
+        for (const strat of group) {
+            html += `
+                <div class="pool-info-item">
+                    <span class="pool-info-item-name">${strat.display_name}</span>
+                    <span class="item-category cat-${strat.category}">${formatCategory(strat.category)}</span>
+                </div>
+            `;
+        }
+        html += `</div>`;
+    }
+
+    // Weapons section
+    html += `<div class="pool-info-section-divider">WEAPONS & GEAR</div>`;
+
+    // Primaries
+    if (pool.primaries.length > 0) {
+        html += `
+            <div class="pool-info-group">
+                <div class="pool-info-group-label">PRIMARIES <span class="pool-info-count">(${pool.primaries.length})</span></div>
+        `;
+        for (const id of pool.primaries) {
+            const meta = ITEM_META[id];
+            if (!meta) continue;
+            html += `
+                <div class="pool-info-item">
+                    <span class="pool-info-item-name">${meta.display_name}</span>
+                    <span class="item-pen pen-${meta.pen}">${meta.pen.toUpperCase()} PEN</span>
+                </div>
+            `;
+        }
+        html += `</div>`;
+    }
+
+    // Secondaries
+    if (pool.secondaries.length > 0) {
+        html += `
+            <div class="pool-info-group">
+                <div class="pool-info-group-label">SECONDARIES <span class="pool-info-count">(${pool.secondaries.length})</span></div>
+        `;
+        for (const id of pool.secondaries) {
+            const meta = ITEM_META[id];
+            if (!meta) continue;
+            html += `
+                <div class="pool-info-item">
+                    <span class="pool-info-item-name">${meta.display_name}</span>
+                    <span class="item-pen pen-${meta.pen}">${meta.pen.toUpperCase()} PEN</span>
+                </div>
+            `;
+        }
+        html += `</div>`;
+    }
+
+    // Throwables
+    if (pool.throwables.length > 0) {
+        html += `
+            <div class="pool-info-group">
+                <div class="pool-info-group-label">THROWABLES <span class="pool-info-count">(${pool.throwables.length})</span></div>
+        `;
+        for (const id of pool.throwables) {
+            const meta = ITEM_META[id];
+            if (!meta) continue;
+            html += `
+                <div class="pool-info-item">
+                    <span class="pool-info-item-name">${meta.display_name}</span>
+                </div>
+            `;
+        }
+        html += `</div>`;
+    }
+
+    html += `</div></div>`;
+    overlay.innerHTML = html;
 }
 
 // ═══════════ START ═══════════

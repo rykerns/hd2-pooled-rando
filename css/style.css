@@ -216,6 +216,7 @@ body.chaos-active::after {
     color: var(--text);
     font-family: inherit;
     font-size: inherit;
+    position: relative;
 }
 
 .pool-card:hover {
@@ -363,6 +364,7 @@ body.chaos-active::after {
     gap: 0;
     border: 1px solid var(--border);
     width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -699,6 +701,7 @@ footer {
     .left-panel {
         border-right: none;
         border-bottom: 1px solid var(--border);
+        overflow: hidden;
     }
 
     .right-panel-inner {
@@ -723,6 +726,15 @@ footer {
 @media (max-width: 600px) {
     .pool-grid {
         grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .pool-card {
+        max-width: 100%;
+    }
+
+    .difficulty-options {
+        flex-wrap: wrap;
     }
 
     .weapon-slots {

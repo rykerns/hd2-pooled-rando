@@ -5,6 +5,7 @@ export const POOLS = {
     anti_heavy: {
         display_name: "Titanbreaker",
         description: "For when liberty needs a big hole punched through something.",
+        rationale: "Built around heavy-penetration primaries and anti-tank stratagems. Every weapon and stratagem is chosen to crack armor — from Recoilless Rifles and Railguns to Thermite grenades and the Senator. If it doesn't dent plating, it doesn't belong here.",
         color: "#ef5350",
         primaries: [
             "PRI_ERUPTOR", "PRI_DOUBLE_EDGE_SICKLE", "PRI_TORCHER_FLAM",
@@ -33,6 +34,7 @@ export const POOLS = {
     anti_chaff: {
         display_name: "Crowd Control Directive",
         description: "Converts enemy numbers into enemy statistics.",
+        rationale: "Focused on clearing waves of light and medium enemies fast. Shotguns, flamers, and area-denial stratagems like Napalm, Gatling Sentries, and Incendiary Mines keep the horde thinned. Penetration takes a back seat to volume and splash damage.",
         color: "#ff9800",
         primaries: [
             "PRI_BREAKER", "PRI_BREAKER_SPNPR", "PRI_BREAKER_INCIN",
@@ -65,6 +67,7 @@ export const POOLS = {
     support: {
         display_name: "Combat Quartermaster",
         description: "Because democracy runs best when someone remembers the ammo.",
+        rationale: "The team-player loadout. Quiet primaries and utility secondaries pair with Shield Packs, Supply Packs, and smoke stratagems. The goal is keeping your squad alive and supplied, not topping the kill counter. Melee stuns and Stim Pistol round out the support toolkit.",
         color: "#26c6da",
         primaries: [
             "PRI_DEFENDER", "PRI_KNIGHT", "PRI_STA_SMG", "PRI_M7S_SMG",
@@ -93,6 +96,7 @@ export const POOLS = {
     generalist: {
         display_name: "Jackboot Standard",
         description: "Jack of all trades, servant of Super Earth.",
+        rationale: "A balanced all-rounder pool with no extreme specialization. Reliable rifles, versatile sidearms, and a broad mix of stratagems from support weapons to sentries and orbitals. Handles any mission profile without excelling at or neglecting any role.",
         color: "#78909c",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_ADJUDICATOR",
@@ -128,6 +132,7 @@ export const POOLS = {
     pyromaniac: {
         display_name: "Pyromaniac",
         description: "Applies liberty at extremely high temperatures.",
+        rationale: "Everything burns. Flamethrowers, incendiary shotguns, napalm stratagems, and Thermite grenades make this pool a fire-damage commitment. Backed by the Flame Sentry and Hot Dog drone for passive area denial. Bring marshmallows.",
         color: "#ff5722",
         primaries: [
             "PRI_TORCHER_FLAM", "PRI_BREAKER_INCIN", "PRI_COOKOUT",
@@ -151,6 +156,7 @@ export const POOLS = {
     grenadier: {
         display_name: "Ordinance Enthusiast",
         description: "Solves every problem by making it several smaller problems.",
+        rationale: "Explosives in every slot. Plasma rifles, Grenade Pistols, and crossbows on the personal side; Grenade Launchers, Airburst, and orbital barrages on the stratagem side. Maximum blast radius, minimum subtlety. If it doesn't explode, it doesn't belong.",
         color: "#ffc107",
         primaries: [
             "PRI_ERUPTOR", "PRI_EXPLODING_XBOW", "PRI_SCORCHER_PLAS",
@@ -176,6 +182,7 @@ export const POOLS = {
     shock_trooper: {
         display_name: "Arcborne",
         description: "Introduces the enemy to the exciting future of electricity.",
+        rationale: "Electric and stun-focused loadout built around the Arc Thrower, Tesla Tower, and EMS orbitals. Stun grenades, Stun Lances, and the Blitzer keep enemies locked down while the K-9 drone and mobility packs let you stay aggressive. Crowd control through voltage.",
         color: "#2196f3",
         primaries: [
             "PRI_BLITZER", "PRI_ACCELERATOR_RIFLE", "PRI_PACIFIER",
@@ -197,6 +204,7 @@ export const POOLS = {
     stinkbug: {
         display_name: "Biohazard Doctrine",
         description: "Turns the battlefield into an air quality emergency.",
+        rationale: "Gas and area-denial themed. The entire primary and secondary pool is unlocked to compensate for the niche stratagem selection — Gas Mines, Orbital Gas, Sterilizer, and Dog Breath form the toxic core. Smoke and lure throwables add battlefield control. You win by making the air unbreathable.",
         color: "#7cb342",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_LIBERATOR_CONC",
@@ -240,6 +248,7 @@ export const POOLS = {
     laser_head: {
         display_name: "Proton Patriot",
         description: "Proof that concentrated light can carry concentrated freedom.",
+        rationale: "All-energy loadout: lasers, plasma, and beam weapons across every slot. The Laser Cannon, Quasar, and Orbital Laser provide heavy damage while Rover and Laser Sentry add passive fire. Mobility packs synergize with heat-based weapons that never need ammo pickups.",
         color: "#29b6f6",
         primaries: [
             "PRI_SCYTHE_LAS", "PRI_SICKLE_LAS", "PRI_DOUBLE_EDGE_SICKLE",
@@ -265,6 +274,7 @@ export const POOLS = {
     melee_maniac: {
         display_name: "Melee Maniac",
         description: "Why shoot the enemy from far away when you can terrify them personally?",
+        rationale: "Close-quarters chaos. Shotguns and melee secondaries pair with mobility packs, shields, and smoke to get you into stabbing range. Breaching Hammer, Defoliation Tool, and One True Flag anchor the stratagem pool. The weapons are short-range because you should be too.",
         color: "#d32f2f",
         primaries: [
             "PRI_BREAKER", "PRI_BREAKER_SPNPR", "PRI_BREAKER_INCIN",
@@ -295,6 +305,7 @@ export const POOLS = {
     marksman: {
         display_name: "Deadeye Decree",
         description: "Delivers democracy one carefully placed round at a time.",
+        rationale: "Precision-first loadout. Marksman rifles, scoped weapons, and the Senator provide accurate long-range fire. Stratagems focus on single-target elimination — Railgun, Spear, Orbital Railcannon, and Eagle 500kg. Smoke and stun grenades create the breathing room a marksman needs.",
         color: "#4caf50",
         primaries: [
             "PRI_AMENDMENT", "PRI_CONSTITUTION", "PRI_DEADEYE",
@@ -321,6 +332,7 @@ export const POOLS = {
     stealth_diver: {
         display_name: "Blackout Operative",
         description: "Leaves nothing behind but completed objectives and confused survivors.",
+        rationale: "Stealth and evasion focused. Suppressed weapons, compact SMGs, and smoke-based throwables keep your profile low. Mobility packs provide escape routes while Orbital Smoke and EMS cover your movement. The Railgun and Solo Silo handle threats quietly when stealth fails.",
         color: "#00695c",
         primaries: [
             "PRI_DEFENDER", "PRI_M7S_SMG", "PRI_SUPPRESSOR",
@@ -347,6 +359,7 @@ export const POOLS = {
     truffle_hunter: {
         display_name: "Rapid Acquisition Unit",
         description: "Digs up Super Earth's treasures before the enemy knows they were there.",
+        rationale: "Speed-run and objective-focused. Light, fast primaries and mobility packs get you in and out of POIs. Eagle strikes provide rapid call-in support while Guard Dogs offer passive cover during looting. The pool is built for quick engagements, not prolonged firefights.",
         color: "#8d6e63",
         primaries: [
             "PRI_KNIGHT", "PRI_DEFENDER", "PRI_STA_SMG", "PRI_M7S_SMG",
@@ -378,6 +391,7 @@ export const POOLS = {
     mechdiver: {
         display_name: "Steel Cavalry",
         description: "When walking is not enough, arrive as a war crime with legs.",
+        rationale: "Vehicle and mech-centered. Exosuits and the Fast Recon Vehicle anchor the stratagem pool, with Guard Dogs and auto-companions for sustained pressure. Personal weapons are versatile all-rounders since your mech does the heavy lifting. When the mech breaks, call another one.",
         color: "#546e7a",
         primaries: [
             "PRI_LIBERATOR", "PRI_DEFENDER", "PRI_KNIGHT",
@@ -409,6 +423,7 @@ export const POOLS = {
     the_engineer: {
         display_name: "Fortification Specialist",
         description: "Why fight unfairly when turrets can do it for you?",
+        rationale: "Turret and emplacement overload. Every sentry type is on the table alongside HMG Emplacements, Grenadier Battlements, and EMS Mortars. Personal weapons lean toward reliable mid-range options since your turrets handle the killing. The Supply Pack keeps the whole operation running.",
         color: "#fdd835",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_ADJUDICATOR",
@@ -444,6 +459,7 @@ export const POOLS = {
     induction_kit: {
         display_name: "Induction Kit",
         description: "Everything a new Helldiver needs to spread democracy, panic responsibly, and survive at least one briefing.",
+        rationale: "Starter-friendly with no trick weapons or niche picks. Straightforward rifles, basic grenades, and the broadest stratagem selection in the app. Eagles, orbitals, sentries, and the Jump Pack are all here — it is a sampler platter of everything Super Earth offers a fresh recruit.",
         color: "#4fc3f7",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_STA_ASS_RIFLE",
@@ -477,6 +493,7 @@ export const POOLS = {
     the_historian: {
         display_name: "The Historian",
         description: "Proves that even obsolete equipment can still produce modern casualties.",
+        rationale: "Old-school and low-tech themed. Lever-actions, pump shotguns, and conventional firearms dominate the weapon pool. Stratagems lean toward classic call-ins — Airstrikes, Napalm, basic Machine Guns, and the humble Supply Pack. No lasers, no plasma, just lead and gunpowder.",
         color: "#a1887f",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_CONC", "PRI_LIBERATOR_CARB",
@@ -511,6 +528,7 @@ export const POOLS = {
     problem_solver: {
         display_name: "Problem Solver Mk.II",
         description: "It's simple. Enemy East? Remove East.",
+        rationale: "Maximum firepower, zero restraint. The biggest primaries, heaviest stratagems, and most destructive ordnance available. Orbital barrages, Exosuits, Portable Hellbombs, and the Bastion all make the list. Collateral damage is a feature, not a bug.",
         color: "#e53935",
         primaries: [
             "PRI_LIBERATOR_PEN", "PRI_COYOTE", "PRI_MAC5_ASS_RIFLE",
@@ -551,6 +569,7 @@ export const POOLS = {
     democracys_intern: {
         display_name: "Democracy's Intern",
         description: "Here to learn, serve, and require constant supervision from a safe distance.",
+        rationale: "Low-threat support role. Basic weapons, defensive throwables, and utility-heavy stratagems like shields, smoke, and mobility packs. No heavy ordnance — just enough firepower to contribute without endangering the squad. The training wheels loadout for cautious divers.",
         color: "#81c784",
         primaries: [
             "PRI_LIBERATOR", "PRI_LIBERATOR_PEN", "PRI_LIBERATOR_CARB",
@@ -586,6 +605,7 @@ export const POOLS = {
     court_marshal: {
         display_name: "Court Marshal Candidate",
         description: "Proudly redefining \"acceptable losses\" one squadmate at a time.",
+        rationale: "Friendly-fire maximizer. Every weapon and stratagem is chosen for its team-killing potential — arc weapons, flamers, explosive launchers, mine fields, and the Portable Hellbomb. If it can hurt your squad, it is in this pool. Bring extra reinforcements.",
         color: "#ff7043",
         primaries: [
             "PRI_PACIFIER", "PRI_COYOTE", "PRI_ADJUDICATOR",
