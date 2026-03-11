@@ -105,6 +105,10 @@ function onRandomize() {
 }
 
 function triggerDeployAnimation() {
+    // Hide placeholder, show loadout
+    const placeholder = document.getElementById('loadout-placeholder');
+    if (placeholder) placeholder.classList.add('hidden');
+
     const display = document.getElementById('loadout-display');
     display.classList.remove('hidden');
     display.classList.remove('deploy-anim');

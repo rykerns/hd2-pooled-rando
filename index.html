@@ -20,8 +20,8 @@
         <div class="header-stripe"></div>
     </header>
 
-    <main>
-        <section id="pool-selection">
+    <main class="main-layout">
+        <section id="pool-selection" class="left-panel">
             <h2 class="section-title">SELECT MISSION PROFILE</h2>
 
             <button id="chaos-btn" class="chaos-btn">
@@ -32,36 +32,44 @@
             <div id="pool-grid" class="pool-grid"></div>
         </section>
 
-        <div class="action-bar">
-            <button id="randomize-btn" class="randomize-btn" disabled>
-                <span class="btn-text">DEPLOY LOADOUT</span>
-            </button>
-            <button id="collection-btn" class="collection-btn">
-                MANAGE COLLECTION
-            </button>
+        <div class="right-panel">
+            <div class="right-panel-inner">
+                <div class="action-bar">
+                    <button id="randomize-btn" class="randomize-btn" disabled>
+                        <span class="btn-text">DEPLOY LOADOUT</span>
+                    </button>
+                    <button id="collection-btn" class="collection-btn">
+                        MANAGE COLLECTION
+                    </button>
+                </div>
+
+                <div id="loadout-placeholder" class="loadout-placeholder">
+                    <p class="placeholder-text">SELECT A MISSION PROFILE<br>TO DEPLOY</p>
+                </div>
+
+                <section id="loadout-display" class="loadout-display hidden">
+                    <h2 id="loadout-pool-name" class="section-title loadout-title"></h2>
+
+                    <div class="loadout-section">
+                        <h3 class="loadout-section-label">STRATAGEMS</h3>
+                        <div id="stratagem-slots" class="stratagem-slots"></div>
+                    </div>
+
+                    <div class="loadout-section">
+                        <h3 class="loadout-section-label">WEAPONS &amp; GEAR</h3>
+                        <div class="weapon-slots">
+                            <div id="primary-slot" class="loadout-slot weapon-slot"></div>
+                            <div id="secondary-slot" class="loadout-slot weapon-slot"></div>
+                            <div id="throwable-slot" class="loadout-slot weapon-slot"></div>
+                        </div>
+                    </div>
+
+                    <p id="loadout-warnings" class="warnings hidden"></p>
+                </section>
+            </div>
         </div>
 
         <div id="collection-overlay" class="collection-overlay hidden"></div>
-
-        <section id="loadout-display" class="loadout-display hidden">
-            <h2 id="loadout-pool-name" class="section-title loadout-title"></h2>
-
-            <div class="loadout-section">
-                <h3 class="loadout-section-label">STRATAGEMS</h3>
-                <div id="stratagem-slots" class="stratagem-slots"></div>
-            </div>
-
-            <div class="loadout-section">
-                <h3 class="loadout-section-label">WEAPONS &amp; GEAR</h3>
-                <div class="weapon-slots">
-                    <div id="primary-slot" class="loadout-slot weapon-slot"></div>
-                    <div id="secondary-slot" class="loadout-slot weapon-slot"></div>
-                    <div id="throwable-slot" class="loadout-slot weapon-slot"></div>
-                </div>
-            </div>
-
-            <p id="loadout-warnings" class="warnings hidden"></p>
-        </section>
     </main>
 
     <footer>
