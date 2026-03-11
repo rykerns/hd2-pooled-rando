@@ -4,13 +4,14 @@ import * as collection from './collection.js';
 
 let currentPool = null;
 let chaosMode = false;
-let currentDifficulty = 'easy';
+let currentDifficulty = 'recruit';
 let poolWarningDebounce = null;
 
 const DIFFICULTY_DESCRIPTIONS = {
-    easy: 'No restrictions. Pure chaos.',
-    medium: 'Max 1 support weapon & 1 backpack. Expendables unrestricted.',
-    hard: 'Max 1 support weapon, 1 backpack & 1 expendable.',
+    recruit: 'Max 1 support weapon, 1 backpack & 1 expendable.',
+    helldiver: 'Max 1 support weapon & 1 backpack. Expendables unrestricted.',
+    legend: 'No restrictions. Pure chaos.',
+    nightmare: 'Equipment only. No call-downs. Good luck, Helldiver.',
 };
 
 // ═══════════ INIT ═══════════

@@ -368,13 +368,13 @@ body.chaos-active::after {
 
 .diff-btn {
     font-family: 'Oswald', Impact, sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     color: var(--text-dim);
     background: var(--bg-card);
     border: none;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
@@ -389,17 +389,29 @@ body.chaos-active::after {
     color: var(--text);
 }
 
-.diff-btn.active {
-    background: var(--accent);
+/* Recruit — green (most restrictive, easiest) */
+.diff-btn.active[data-difficulty="recruit"] {
+    background: var(--pen-light);
     color: var(--bg-dark);
 }
 
-.diff-btn.active[data-difficulty="medium"] {
+/* Helldiver — orange */
+.diff-btn.active[data-difficulty="helldiver"] {
     background: var(--pen-medium);
+    color: var(--bg-dark);
 }
 
-.diff-btn.active[data-difficulty="hard"] {
+/* Legend — red (no restrictions) */
+.diff-btn.active[data-difficulty="legend"] {
     background: var(--pen-heavy);
+    color: var(--bg-dark);
+}
+
+/* Brasch's Revenge — purple (nightmare) */
+.diff-btn.active[data-difficulty="nightmare"] {
+    background: #ab47bc;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(171, 71, 188, 0.6);
 }
 
 .difficulty-desc {

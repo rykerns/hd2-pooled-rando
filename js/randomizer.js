@@ -25,11 +25,11 @@ function pickRandom(arr, count) {
 /**
  * Check if a stratagem candidate can be added under current slot state.
  *
- * Difficulty rules:
- *   easy   – no restrictions
- *   medium – max 1 support-weapon slot, max 1 backpack slot
- *            (combined fills both); expendables are unrestricted
- *   hard   – same as medium PLUS max 1 expendable total
+ * Difficulty rules (low → high restriction):
+ *   legend    – no restrictions at all
+ *   helldiver – max 1 support-weapon slot, max 1 backpack slot
+ *               (combined fills both); expendables are unrestricted
+ *   recruit   – same as helldiver PLUS max 1 expendable total
  */
 function canPick(meta, state, difficulty) {
     const slot = meta.slot || null;
@@ -37,7 +37,7 @@ function canPick(meta, state, difficulty) {
 
     // Expendable items never permanently occupy a slot
     if (isExpendable) {
-        if (difficulty === 'hard' && state.expendableCount >= 1) return false;
+        if (difficulty === 'recruit' && state.expendableCount >= 1) return false;
         return true;
     }
 
@@ -83,10 +83,27 @@ function applyPick(meta, state) {
  * Shuffles candidates and greedily selects up to `count` that satisfy rules.
  */
 function pickStratagems(pool, count, difficulty) {
-    if (difficulty === 'easy') {
+    // Legend — no restrictions, pure random
+    if (difficulty === 'legend') {
         return pickRandom(pool, count);
     }
 
+    // Brasch's Revenge — equipment only (must occupy a slot or be expendable)
+    // No eagles, orbitals, or defensives. Guaranteed slot conflicts.
+    if (difficulty === 'nightmare') {
+        const equipmentOnly = [...new Set(pool)].filter(id => {
+            const meta = STRATAGEM_META[id];
+            if (!meta) return false;
+            return meta.slot != null || !!meta.expendable;
+        });
+
+        if (equipmentOnly.length < count) {
+            return shuffle(equipmentOnly);
+        }
+        return pickRandom(equipmentOnly, count);
+    }
+
+    // Recruit & Helldiver — constrained slot selection
     const shuffled = shuffle([...new Set(pool)]);
     const selected = [];
     const state = {
@@ -112,10 +129,10 @@ function pickStratagems(pool, count, difficulty) {
 /**
  * Generate a full loadout from a pool definition.
  * @param {object} pool       – pool object with stratagems, primaries, etc.
- * @param {string} difficulty – 'easy' | 'medium' | 'hard' (default: 'easy')
+ * @param {string} difficulty – 'recruit' | 'helldiver' | 'legend' | 'nightmare'
  * Returns { stratagems, primary, secondary, throwable, warnings }
  */
-export function generateLoadout(pool, difficulty = 'easy') {
+export function generateLoadout(pool, difficulty = 'recruit') {
     const warnings = [];
 
     // 4 unique stratagems (difficulty-aware)
@@ -125,7 +142,7 @@ export function generateLoadout(pool, difficulty = 'easy') {
     const stratagemIds = pickStratagems(pool.stratagems, 4, difficulty);
 
     if (stratagemIds.length < 4 && pool.stratagems.length >= 4) {
-        warnings.push(`Only ${stratagemIds.length} valid stratagem(s) for ${difficulty} difficulty.`);
+        warnings.push(`Only ${stratagemIds.length} valid stratagem(s) for this difficulty.`);
     }
 
     const stratagems = stratagemIds
